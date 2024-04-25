@@ -4,7 +4,7 @@
   "version": "0.7.8-beta.0",
   "packageManager": "pnpm@9.0.6",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by @antfu",
-  "author": "cv <hi@cvv.ai>",
+  "author": "noicu <ycxgzs@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/noicu",
   "homepage": "https://github.com/noicu/utils#readme",
