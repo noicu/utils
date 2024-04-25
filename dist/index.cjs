@@ -757,6 +757,32 @@ function p(items, options) {
   return new PInstance(items, options);
 }
 
+function getDayTimestamps(date, interval = "hour") {
+  const timestamps = [];
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  for (let i = 0; i < 24; i++) {
+    const hour = new Date(year, month, day, i);
+    if (interval === "hour") {
+      timestamps.push(hour.getTime());
+    } else {
+      for (let j = 0; j < 60; j++) {
+        const minute = new Date(year, month, day, i, j);
+        if (interval === "minute") {
+          timestamps.push(minute.getTime());
+        } else {
+          for (let k = 0; k < 60; k++) {
+            const second = new Date(year, month, day, i, j, k);
+            timestamps.push(second.getTime());
+          }
+        }
+      }
+    }
+  }
+  return timestamps;
+}
+
 exports.assert = assert;
 exports.at = at;
 exports.batchInvoke = batchInvoke;
@@ -773,6 +799,7 @@ exports.deepMergeWithArray = deepMergeWithArray;
 exports.ensurePrefix = ensurePrefix;
 exports.ensureSuffix = ensureSuffix;
 exports.flattenArrayable = flattenArrayable;
+exports.getDayTimestamps = getDayTimestamps;
 exports.getTypeName = getTypeName;
 exports.hasOwnProperty = hasOwnProperty;
 exports.invoke = invoke;

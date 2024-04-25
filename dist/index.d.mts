@@ -598,4 +598,11 @@ declare class PInstance<T = any> extends Promise<Awaited<T>[]> {
  */
 declare function p<T = any>(items?: Iterable<T>, options?: POptions): PInstance<T>;
 
-export { type ArgumentsType, type Arrayable, type Awaitable, type Constructor, type ControlledPromise, type DeepMerge, type ElementOf, type Fn, type MergeInsertions, type Nullable, type PartitionFilter, type SingletonPromiseReturn, type UnionToIntersection, assert, at, batchInvoke, capitalize, clamp, clampArrayRange, clearUndefined, createControlledPromise, createPromiseLock, createSingletonPromise, debounce, deepMerge, deepMergeWithArray, ensurePrefix, ensureSuffix, flattenArrayable, getTypeName, hasOwnProperty, invoke, isBoolean, isBrowser, isDate, isDeepEqual, isDef, isFunction, isKeyOf, isNull, isNumber, isObject, isRegExp, isString, isTruthy, isUndefined, isWindow, last, lerp, mergeArrayable, move, noNull, noop, notNullish, notUndefined, objectEntries, objectKeys, objectMap, objectPick, p, partition, randomStr, range, remap, remove, sample, shuffle, slash, sleep, sum, tap, template, throttle, timestamp, toArray, toString, uniq, uniqueBy };
+/**
+ * 获取给定日期当天所有指定间隔颗粒度的时间戳
+ * @param date 日期
+ * @param interval 间隔颗粒度，默认为 hour, 可选值有 hour, minute, second
+ */
+declare function getDayTimestamps(date: Date, interval?: 'hour' | 'minute' | 'second'): number[];
+
+export { type ArgumentsType, type Arrayable, type Awaitable, type Constructor, type ControlledPromise, type DeepMerge, type ElementOf, type Fn, type MergeInsertions, type Nullable, type PartitionFilter, type SingletonPromiseReturn, type UnionToIntersection, assert, at, batchInvoke, capitalize, clamp, clampArrayRange, clearUndefined, createControlledPromise, createPromiseLock, createSingletonPromise, debounce, deepMerge, deepMergeWithArray, ensurePrefix, ensureSuffix, flattenArrayable, getDayTimestamps, getTypeName, hasOwnProperty, invoke, isBoolean, isBrowser, isDate, isDeepEqual, isDef, isFunction, isKeyOf, isNull, isNumber, isObject, isRegExp, isString, isTruthy, isUndefined, isWindow, last, lerp, mergeArrayable, move, noNull, noop, notNullish, notUndefined, objectEntries, objectKeys, objectMap, objectPick, p, partition, randomStr, range, remap, remove, sample, shuffle, slash, sleep, sum, tap, template, throttle, timestamp, toArray, toString, uniq, uniqueBy };

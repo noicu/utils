@@ -755,4 +755,30 @@ function p(items, options) {
   return new PInstance(items, options);
 }
 
-export { assert, at, batchInvoke, capitalize, clamp, clampArrayRange, clearUndefined, createControlledPromise, createPromiseLock, createSingletonPromise, debounce, deepMerge, deepMergeWithArray, ensurePrefix, ensureSuffix, flattenArrayable, getTypeName, hasOwnProperty, invoke, isBoolean, isBrowser, isDate, isDeepEqual, isDef, isFunction, isKeyOf, isNull, isNumber, isObject, isRegExp, isString, isTruthy, isUndefined, isWindow, last, lerp, mergeArrayable, move, noNull, noop, notNullish, notUndefined, objectEntries, objectKeys, objectMap, objectPick, p, partition, randomStr, range, remap, remove, sample, shuffle, slash, sleep, sum, tap, template, throttle, timestamp, toArray, toString, uniq, uniqueBy };
+function getDayTimestamps(date, interval = "hour") {
+  const timestamps = [];
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  for (let i = 0; i < 24; i++) {
+    const hour = new Date(year, month, day, i);
+    if (interval === "hour") {
+      timestamps.push(hour.getTime());
+    } else {
+      for (let j = 0; j < 60; j++) {
+        const minute = new Date(year, month, day, i, j);
+        if (interval === "minute") {
+          timestamps.push(minute.getTime());
+        } else {
+          for (let k = 0; k < 60; k++) {
+            const second = new Date(year, month, day, i, j, k);
+            timestamps.push(second.getTime());
+          }
+        }
+      }
+    }
+  }
+  return timestamps;
+}
+
+export { assert, at, batchInvoke, capitalize, clamp, clampArrayRange, clearUndefined, createControlledPromise, createPromiseLock, createSingletonPromise, debounce, deepMerge, deepMergeWithArray, ensurePrefix, ensureSuffix, flattenArrayable, getDayTimestamps, getTypeName, hasOwnProperty, invoke, isBoolean, isBrowser, isDate, isDeepEqual, isDef, isFunction, isKeyOf, isNull, isNumber, isObject, isRegExp, isString, isTruthy, isUndefined, isWindow, last, lerp, mergeArrayable, move, noNull, noop, notNullish, notUndefined, objectEntries, objectKeys, objectMap, objectPick, p, partition, randomStr, range, remap, remove, sample, shuffle, slash, sleep, sum, tap, template, throttle, timestamp, toArray, toString, uniq, uniqueBy };
