@@ -83,7 +83,7 @@ export function template(str: string, ...args: any[]): string {
 // https://github.com/ai/nanoid
 const urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict'
 /**
- * Generate a random string
+ * 生成随机字符串
  * @category String
  */
 export function randomStr(size = 16, dict = urlAlphabet) {
@@ -96,7 +96,7 @@ export function randomStr(size = 16, dict = urlAlphabet) {
 }
 
 /**
- * First letter uppercase, other lowercase
+ * 首字母大写，其他小写
  * @category string
  * @example
  * ```
